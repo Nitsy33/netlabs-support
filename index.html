@@ -15,7 +15,11 @@
       --radius: 14px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: Arial, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -24,7 +28,9 @@
       line-height: 1.6;
     }
 
-    a { text-decoration: none; }
+    a {
+      text-decoration: none;
+    }
 
     header {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -65,7 +71,9 @@
       padding-bottom: 2px;
     }
 
-    .nav-links a:hover { border-color: #e5efff; }
+    .nav-links a:hover {
+      border-color: #e5efff;
+    }
 
     main {
       max-width: 980px;
@@ -120,7 +128,8 @@
       margin-top: 8px;
     }
 
-    .btn-primary, .btn-outline {
+    .btn-primary,
+    .btn-outline {
       font-size: 14px;
       padding: 9px 16px;
       border-radius: 999px;
@@ -138,16 +147,25 @@
       color: white;
       box-shadow: 0 3px 10px rgba(26,115,232,0.35);
     }
-    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
 
     .btn-outline {
       background: transparent;
       border-color: #ccd4e2;
       color: #374151;
     }
-    .btn-outline:hover { border-color: var(--primary); color: var(--primary-dark); }
 
-    .section { margin-top: 32px; }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    .section {
+      margin-top: 32px;
+    }
 
     .section-title {
       font-size: 17px;
@@ -161,10 +179,19 @@
       margin-bottom: 14px;
     }
 
-    .grid { display: grid; gap: 18px; }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
     @media (min-width: 780px) {
-      .grid-2 { grid-template-columns: 2fr 1.4fr; }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-2 {
+        grid-template-columns: 2fr 1.4fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .card {
@@ -176,7 +203,11 @@
       font-size: 13px;
     }
 
-    .card h3 { font-size: 14px; margin-bottom: 6px; }
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #111827;
+    }
 
     .badge {
       display: inline-block;
@@ -188,16 +219,30 @@
       margin-bottom: 6px;
     }
 
-    ul { padding-left: 16px; margin-top: 4px; }
-    li { margin-bottom: 4px; }
+    ul {
+      padding-left: 16px;
+      margin-top: 4px;
+    }
 
-    .contact p { margin-bottom: 6px; }
+    li {
+      margin-bottom: 4px;
+    }
+
+    .contact p {
+      margin-bottom: 6px;
+    }
 
     footer {
       font-size: 12px;
       color: var(--muted);
       text-align: center;
       padding: 16px 0 30px;
+    }
+
+    /* Ajuste específico para el bloque de privacidad */
+    .privacy-text {
+      font-size: 12px;
+      color: #6b7280;
     }
   </style>
 </head>
@@ -217,12 +262,14 @@
   </header>
 
   <main>
+    <!-- HERO / PROYECTO -->
     <section class="hero" id="proyecto">
       <div class="hero-pill">Proyecto piloto interno</div>
       <h1 class="hero-title">Desarrollo de bot para soporte académico</h1>
       <p class="hero-subtitle">
         NET Labs desarrolla soluciones internas para optimizar el trabajo de soporte educativo.
-        Actualmente en fase piloto, orientado a pruebas técnicas con Canvas LMS y WhatsApp Business.
+        Actualmente en fase piloto, orientado a pruebas técnicas con Canvas LMS y WhatsApp Business,
+        en un entorno controlado y sin servicio público activo.
       </p>
 
       <div class="btn-container">
@@ -231,50 +278,123 @@
       </div>
 
       <div class="hero-note">
-        Proyecto en desarrollo. No disponible para uso público ni comercial.
+        Este proyecto está en desarrollo y se utiliza únicamente para pruebas internas y coordinación técnica.
+        No está disponible como servicio comercial ni para usuarios finales.
       </div>
     </section>
 
+    <!-- ALCANCE -->
     <section id="alcance" class="section">
       <h2 class="section-title">¿Qué estamos construyendo?</h2>
-      <p class="section-sub">Herramientas internas para soporte académico y automatización institucional.</p>
+      <p class="section-sub">
+        Herramientas internas para soporte académico y automatización institucional en entornos virtuales.
+      </p>
 
       <div class="grid grid-3">
         <div class="card">
           <div class="badge">Bots educativos</div>
           <h3>Flujos de asistencia</h3>
-          <p>Desarrollo de prototipos para asistir al equipo técnico en activaciones académicas.</p>
+          <p>
+            Prototipos de bot que ayudan al equipo técnico a registrar casos, consultar información
+            académica y simular procesos de soporte institucional.
+          </p>
         </div>
+
         <div class="card">
           <div class="badge">Integraciones</div>
-          <h3>Canvas LMS</h3>
-          <p>Pruebas en entorno controlado utilizando APIs institucionales.</p>
+          <h3>Canvas LMS y APIs</h3>
+          <p>
+            Pruebas con integraciones a plataformas educativas en modo de laboratorio, utilizando
+            entornos de prueba y revisiones manuales constantes.
+          </p>
         </div>
+
         <div class="card">
           <div class="badge">Automatización</div>
           <h3>Procesos internos</h3>
-          <p>Integración con Google Workspace para trazabilidad y seguimiento.</p>
+          <p>
+            Integración con Google Workspace y otras herramientas internas para registrar acciones,
+            generar reportes y facilitar la trazabilidad del soporte.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- ESTADO ACTUAL / NO COMERCIAL -->
+    <section class="section">
+      <h2 class="section-title">Estado actual del proyecto</h2>
+      <p class="section-sub">
+        NET Labs no ofrece servicios de gestión académica al público ni productos comerciales desde este sitio.
+      </p>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Fase de validación técnica</h3>
+          <ul>
+            <li>Uso en entorno controlado y separado del entorno académico real.</li>
+            <li>Revisión manual de los flujos de trabajo por personal autorizado.</li>
+            <li>Objetivo principal: evaluar viabilidad técnica y operativa.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Sin servicio público activo</h3>
+          <ul>
+            <li>No hay contratación ni oferta comercial en este sitio web.</li>
+            <li>No se ofrece atención directa a estudiantes desde esta página.</li>
+            <li>Cualquier implementación futura requerirá acuerdos institucionales formales.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
     <section id="contacto" class="section">
       <h2 class="section-title">Contacto institucional</h2>
-      <p class="section-sub">Solo para coordinación técnica interna.</p>
+      <p class="section-sub">
+        La información de este sitio está orientada a describir un proyecto tecnológico en desarrollo.
+        El contacto se utiliza para coordinación técnica y consultas institucionales.
+      </p>
 
       <div class="card contact">
         <p><strong>Responsable del proyecto:</strong></p>
         <p>
           📧 <a href="mailto:isaiasd.encina@gmail.com">isaiasd.encina@gmail.com</a><br />
-          📞 <a href="tel:+595971159008">0971 159 008</a>
+          📞 <a href="tel:+595971159008">0971 159 008</a><br />
+          📍 Capiatá, Paraguay
         </p>
-        <p>Este sitio informa sobre un proyecto tecnológico en desarrollo, sin actividad comercial activa.</p>
+        <p>
+          Este sitio no brinda soporte directo a estudiantes ni usuarios finales. Cualquier prueba o
+          integración se realiza únicamente en coordinación con la institución educativa correspondiente.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRIVACIDAD / USO DE DATOS -->
+    <section class="section">
+      <div class="card privacy-text">
+        <h3>Privacidad y uso de datos</h3>
+        <p>
+          Este sitio no recopila ni procesa información personal de visitantes o usuarios finales.
+          Su única finalidad es describir un proyecto piloto interno de tecnología educativa.
+        </p>
+        <p>
+          Las pruebas técnicas relacionadas con bots o integraciones se realizan en entornos
+          controlados, siguiendo lineamientos institucionales y sin exposición pública.
+          Si se desarrollan soluciones productivas en el futuro, estas estarán sujetas a
+          acuerdos formales y a las políticas de privacidad aplicables.
+        </p>
+        <p>
+          Para cualquier consulta sobre el proyecto o su uso de datos, puede escribir a:
+          <strong>isaiasd.encina@gmail.com</strong>.
+        </p>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 NET Labs – Proyecto piloto. Toda implementación depende de acuerdos institucionales internos.
+    © 2025 NET Labs – Proyecto piloto interno de tecnología educativa.  
+    La información publicada tiene fines descriptivos y no constituye una oferta comercial.
   </footer>
 </body>
 </html>
