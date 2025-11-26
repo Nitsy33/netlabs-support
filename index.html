@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NET Labs – Soluciones Tecnológicas para Educación</title>
+  <title>NET Labs – Laboratorio de Soluciones para Educación</title>
   <style>
     :root {
       --primary: #1a73e8;
@@ -12,14 +12,10 @@
       --text: #1f2933;
       --muted: #6b7280;
       --card-bg: #ffffff;
-      --border-radius: 14px;
+      --radius: 14px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Arial, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -28,21 +24,20 @@
       line-height: 1.6;
     }
 
+    a { text-decoration: none; }
+
     header {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
-      padding: 18px 24px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 18px 20px;
     }
 
     .nav {
-      max-width: 1050px;
+      max-width: 980px;
       margin: 0 auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
@@ -52,83 +47,89 @@
     }
 
     .logo span {
-      font-weight: normal;
-      font-size: 13px;
-      opacity: 0.8;
       display: block;
+      font-size: 12px;
+      font-weight: normal;
+      opacity: 0.85;
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
-      font-size: 14px;
+      gap: 16px;
+      font-size: 13px;
     }
 
     .nav-links a {
       color: #e5efff;
-      text-decoration: none;
-      padding-bottom: 2px;
       border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
     }
 
-    .nav-links a:hover {
-      border-color: #e5efff;
-    }
+    .nav-links a:hover { border-color: #e5efff; }
 
     main {
-      max-width: 1050px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 32px 16px 48px;
+      padding: 30px 16px 40px;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .hero-title {
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #111827;
-    }
-
-    .hero-subtitle {
-      font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 18px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+      margin-top: -28px;
+      position: relative;
     }
 
     .hero-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(26,115,232,0.08);
-      padding: 6px 12px;
+      background: rgba(26,115,232,0.07);
+      padding: 5px 11px;
       border-radius: 999px;
-      font-size: 12px;
-      color: var(--primary-dark);
+      font-size: 11px;
+      color: #0f4ab8;
       margin-bottom: 10px;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .hero-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: #6b7280;
       margin-top: 6px;
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
     }
 
     .btn-primary, .btn-outline {
       font-size: 14px;
       padding: 9px 16px;
       border-radius: 999px;
-      border: 1px solid transparent;
-      cursor: default;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
     }
 
     .btn-primary {
@@ -137,51 +138,19 @@
       color: white;
       box-shadow: 0 3px 10px rgba(26,115,232,0.35);
     }
+    .btn-primary:hover { background: var(--primary-dark); }
 
     .btn-outline {
       background: transparent;
-      border-color: rgba(148,163,184,0.7);
+      border-color: #ccd4e2;
       color: #374151;
     }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary-dark); }
 
-    .hero-note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 10px;
-    }
-
-    .hero-card {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: var(--border-radius);
-      box-shadow: 0 8px 25px rgba(15,23,42,0.08);
-      border: 1px solid #e5e7eb;
-      font-size: 13px;
-    }
-
-    .hero-card h3 {
-      font-size: 15px;
-      margin-bottom: 6px;
-      color: #111827;
-    }
-
-    .hero-metric {
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px dashed #e5e7eb;
-    }
-
-    .hero-metric strong {
-      display: block;
-      font-size: 18px;
-    }
-
-    .section {
-      margin-top: 40px;
-    }
+    .section { margin-top: 32px; }
 
     .section-title {
-      font-size: 18px;
+      font-size: 17px;
       margin-bottom: 4px;
       color: #111827;
     }
@@ -189,96 +158,46 @@
     .section-sub {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
-    .grid-3 {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .grid { display: grid; gap: 18px; }
+    @media (min-width: 780px) {
+      .grid-2 { grid-template-columns: 2fr 1.4fr; }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
     }
 
     .card {
       background: var(--card-bg);
-      border-radius: var(--border-radius);
-      padding: 18px;
+      border-radius: var(--radius);
+      padding: 16px;
       border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
       font-size: 13px;
-      box-shadow: 0 4px 12px rgba(15,23,42,0.04);
     }
 
-    .card h3 {
-      font-size: 14px;
-      margin-bottom: 6px;
-      color: #111827;
-    }
+    .card h3 { font-size: 14px; margin-bottom: 6px; }
 
     .badge {
       display: inline-block;
       padding: 2px 8px;
       font-size: 11px;
       border-radius: 999px;
-      background: rgba(26,115,232,0.08);
-      color: var(--primary-dark);
+      background: rgba(26,115,232,0.07);
+      color: #1558b3;
       margin-bottom: 6px;
     }
 
-    ul {
-      padding-left: 16px;
-      margin-top: 6px;
-    }
+    ul { padding-left: 16px; margin-top: 4px; }
+    li { margin-bottom: 4px; }
 
-    li {
-      margin-bottom: 4px;
-    }
-
-    .two-col {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    }
-
-    .contact-box {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      padding: 18px;
-      border: 1px solid #e5e7eb;
-      font-size: 13px;
-    }
-
-    .contact-box p {
-      margin-bottom: 8px;
-    }
-
-    .contact-box strong {
-      color: #111827;
-    }
+    .contact p { margin-bottom: 6px; }
 
     footer {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 20px 16px 32px;
       font-size: 12px;
       color: var(--muted);
       text-align: center;
-    }
-
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-      header {
-        position: static;
-      }
-      main {
-        padding-top: 24px;
-      }
+      padding: 16px 0 30px;
     }
   </style>
 </head>
@@ -287,148 +206,75 @@
     <div class="nav">
       <div class="logo">
         NET Labs
-        <span>Soluciones tecnológicas para educación</span>
+        <span>Laboratorio de soluciones tecnológicas para educación</span>
       </div>
       <nav class="nav-links">
-        <a href="#soluciones">Soluciones</a>
-        <a href="#sectores">Sectores</a>
+        <a href="#proyecto">Proyecto</a>
+        <a href="#alcance">Alcance</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <div class="hero-pill">
-          Plataforma especializada en instituciones educativas
-        </div>
-        <h1 class="hero-title">
-          Automatizamos el soporte académico y la gestión de aulas virtuales
-        </h1>
-        <p class="hero-subtitle">
-          NET Labs desarrolla soluciones tecnológicas a medida para universidades e instituciones de
-          educación superior: activación de materias, integraciones con Canvas LMS y flujos de soporte
-          mediante WhatsApp Business.
-        </p>
-        <div class="hero-actions">
-          <div class="btn-primary">
-            Solicitar contacto comercial
-          </div>
-          <div class="btn-outline">
-            Ver casos de uso para universidades
-          </div>
-        </div>
-        <p class="hero-note">
-          Servicio orientado exclusivamente a organizaciones educativas e instituciones formales.
-        </p>
-      </div>
-
-      <aside class="hero-card">
-        <h3>Suite de automatización académica</h3>
-        <p>
-          Integración de LMS, bots de soporte, flujos de alta/baja de estudiantes y monitoreo de
-          procesos académicos en un entorno centralizado.
-        </p>
-        <div class="hero-metric">
-          <strong>+10&nbsp;000</strong>
-          <span>gestiones académicas potenciales automatizables por semestre en una universidad promedio.</span>
-        </div>
-      </aside>
-    </section>
-
-    <!-- SOLUCIONES -->
-    <section id="soluciones" class="section">
-      <h2 class="section-title">Soluciones para instituciones educativas</h2>
-      <p class="section-sub">
-        Diseñamos herramientas internas que reducen carga operativa en áreas de soporte, coordinación académica y TI.
+    <section class="hero" id="proyecto">
+      <div class="hero-pill">Proyecto piloto interno</div>
+      <h1 class="hero-title">Desarrollo de bot para soporte académico</h1>
+      <p class="hero-subtitle">
+        NET Labs desarrolla soluciones internas para optimizar el trabajo de soporte educativo.
+        Actualmente en fase piloto, orientado a pruebas técnicas con Canvas LMS y WhatsApp Business.
       </p>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="badge">Automatización de soporte</div>
-          <h3>Bots académicos en WhatsApp Business</h3>
-          <p>
-            Flujos conversacionales para gestión de materias, recordatorios, activación de aulas y
-            consultas frecuentes de estudiantes, conectados a sistemas internos existentes.
-          </p>
-        </div>
+      <div class="btn-container">
+        <a href="mailto:isaiasd.encina@gmail.com" class="btn-primary">📧 Contactar por email</a>
+        <a href="tel:+595971159008" class="btn-outline">📞 Llamar</a>
+      </div>
 
-        <div class="card">
-          <div class="badge">Integraciones LMS</div>
-          <h3>Canvas & plataformas virtuales</h3>
-          <p>
-            Procesos de activación de cursos, matriculación y actualización de datos mediante APIs
-            seguras, con trazabilidad en planillas y paneles internos.
-          </p>
-        </div>
+      <div class="hero-note">
+        Proyecto en desarrollo. No disponible para uso público ni comercial.
+      </div>
+    </section>
 
+    <section id="alcance" class="section">
+      <h2 class="section-title">¿Qué estamos construyendo?</h2>
+      <p class="section-sub">Herramientas internas para soporte académico y automatización institucional.</p>
+
+      <div class="grid grid-3">
         <div class="card">
-          <div class="badge">Operaciones internas</div>
-          <h3>Flujos de trabajo con Google Workspace</h3>
-          <p>
-            Integración con Google Sheets y Apps Script para registrar casos, generar reportes
-            académicos y orquestar tareas del equipo de soporte.
-          </p>
+          <div class="badge">Bots educativos</div>
+          <h3>Flujos de asistencia</h3>
+          <p>Desarrollo de prototipos para asistir al equipo técnico en activaciones académicas.</p>
+        </div>
+        <div class="card">
+          <div class="badge">Integraciones</div>
+          <h3>Canvas LMS</h3>
+          <p>Pruebas en entorno controlado utilizando APIs institucionales.</p>
+        </div>
+        <div class="card">
+          <div class="badge">Automatización</div>
+          <h3>Procesos internos</h3>
+          <p>Integración con Google Workspace para trazabilidad y seguimiento.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTORES / QUIÉNES NOS CONTRATAN -->
-    <section id="sectores" class="section">
-      <h2 class="section-title">Organizaciones a las que servimos</h2>
-      <p class="section-sub">
-        NET Labs está orientado a organizaciones que requieren soluciones internas, formales y trazables.
-      </p>
-
-      <div class="two-col">
-        <div class="card">
-          <h3>Educación superior & formación profesional</h3>
-          <ul>
-            <li>Universidades y facultades con campus virtual.</li>
-            <li>Instituciones con alta demanda de soporte tecnológico a estudiantes.</li>
-            <li>Áreas de TI que buscan automatizar procesos repetitivos.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Enfoque de trabajo</h3>
-          <ul>
-            <li>Proyectos bajo acuerdo institucional y alcances definidos.</li>
-            <li>Despliegues progresivos (pilotos internos → escalado).</li>
-            <li>Acompañamiento técnico para equipos de soporte académico.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
     <section id="contacto" class="section">
-      <h2 class="section-title">Contacto comercial</h2>
-      <p class="section-sub">
-        Si representas a una institución educativa y deseas evaluar la implementación de una solución
-        similar, utilizamos este canal para coordinar reuniones técnicas y exploratorias.
-      </p>
+      <h2 class="section-title">Contacto institucional</h2>
+      <p class="section-sub">Solo para coordinación técnica interna.</p>
 
-      <div class="contact-box">
-        <p><strong>Datos de contacto institucional</strong></p>
+      <div class="card contact">
+        <p><strong>Responsable del proyecto:</strong></p>
         <p>
-          📧 <strong>soporte@netlabs.xyz</strong><br />
-          📍 Capiatá, Paraguay<br />
-          📞 +595 971 159008
+          📧 <a href="mailto:isaiasd.encina@gmail.com">isaiasd.encina@gmail.com</a><br />
+          📞 <a href="tel:+595971159008">0971 159 008</a>
         </p>
-        <p>
-          Atendemos exclusivamente consultas de instituciones y organizaciones. No brindamos soporte
-          directo a usuarios finales desde este sitio.
-        </p>
+        <p>Este sitio informa sobre un proyecto tecnológico en desarrollo, sin actividad comercial activa.</p>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 NET Labs. Soluciones tecnológicas para instituciones educativas.  
-    Uso profesional y empresarial. Toda implementación se realiza bajo acuerdo institucional.
+    © 2025 NET Labs – Proyecto piloto. Toda implementación depende de acuerdos institucionales internos.
   </footer>
 </body>
 </html>
